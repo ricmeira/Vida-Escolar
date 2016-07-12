@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+"-// Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <constant name="struts.devMode" value="true" />
+    <constant name="struts.ui.theme" value="simple" />
+    <package name="default" extends="struts-default">
+        
+        <action name="loginParent" class="actions.LoginParentAction" method="login">
+            <result name="success">/parent-messages.jsp</result> 
+            <result name="error">/parent-login.jsp</result> 
+        </action>
+        <action name="registerParent" class="actions.LoginParentAction" method="register">
+            <result name="success">/parent-login.jsp</result> 
+        </action>
+        <action name="toRegisterParent" class="actions.LoginParentAction" method="execute">
+            <result name="success">/parent-registration.jsp</result> 
+        </action>
+    </package>
+
+</struts>
