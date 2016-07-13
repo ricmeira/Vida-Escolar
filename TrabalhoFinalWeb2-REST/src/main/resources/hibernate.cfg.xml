@@ -17,6 +17,7 @@
         <property name="format_sql">true</property>
         
         <mapping class="model.Schools" />
+        <mapping class="model.Supervisors" />
     </session-factory>
 </hibernate-configuration>
 

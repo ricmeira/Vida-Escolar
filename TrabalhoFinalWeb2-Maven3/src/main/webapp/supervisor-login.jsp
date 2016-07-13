@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <html lang="pt">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -15,11 +16,12 @@
     <br><br>
     <h1 class="header center white-text">Vida Escolar</h1>
     <div class="row center">
-      <h5 class="header col s12 light white-text">Professor ou Coordenador, seja bem-vindo!</h5>
+      <h5 class="header col s12 light white-text">Coordenador, seja bem-vindo!</h5>
     </div>
 
     <div class="row center">
       <div class="input-field col s12 m4 offset-m4">
+          
         <input placeholder="CPF" id="teacher-cpf" type="text"/>
       </div>
       <div class="input-field col s12 m4 offset-m4">
@@ -37,8 +39,10 @@
       </div>
     </div>  
     <br><br>
+    
     <div class="col s12 center">
-      <a href="#" id="register" class="white-text">Cadastre-se</a>
+        <s:url action="toRegisterSupervisor" var="urlTag"></s:url>>
+        <a href="<s:property value="#urlTag" />" class="white-text" >Cadaste-se</a>
     </div>
 
   </div>

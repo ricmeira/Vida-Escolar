@@ -84,7 +84,8 @@ public class HTTPPost {
         return null;
     }
     
-        public String sendGet(String xml) {
+    
+    public String sendGet() {
         try {
             HttpURLConnection con = (HttpURLConnection)connectURL.openConnection();
             
@@ -100,8 +101,6 @@ public class HTTPPost {
 		response.append(inputLine);
             }
             in.close();
-
-            System.out.println(response.toString());
             
             return response.toString();
             

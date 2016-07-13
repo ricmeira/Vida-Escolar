@@ -30,6 +30,7 @@ public class ApplicationConfig extends Application {
      */
     private void addRestResourceClasses(Set<Class<?>> resources) {
         resources.add(com.rickzcho.trabalhofinalweb2.rest.SchoolsREST.class);
+        resources.add(com.rickzcho.trabalhofinalweb2.rest.SupervisorsREST.class);
     }
     
 }
