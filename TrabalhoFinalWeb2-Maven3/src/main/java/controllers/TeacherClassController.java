@@ -3,10 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package smd.jsf;
+package controllers;
 
 import java.util.ArrayList;
 import java.util.List;
+import model.ClassGrades;
+import model.Classes;
 
 /**
  *
@@ -14,17 +16,12 @@ import java.util.List;
  */
 public class TeacherClassController {
     private Class newClass;
-    private List<Class> teacherClasses = new ArrayList<Class>(){{
-        add(new Class("Turma 1","1a Série"));
-        add(new Class("Turma 2","1a Série"));
+    private List<Classes> teacherClasses = new ArrayList<Classes>(){{
+        add(new Classes("Turma 1",new ClassGrades("1a Série")));
     }};
     
-    private List<Class> classes = new ArrayList<Class>(){{
-        add(new Class("Turma 1","1a Série"));
-        add(new Class("Turma 2","1a Série"));
-        add(new Class("Turma 1","2a Série"));
-        add(new Class("Turma 1","3a Série"));
-        add(new Class("Turma 1","4a Série"));
+    private List<Classes> classes = new ArrayList<Classes>(){{
+        add(new Classes("Turma 2",new ClassGrades("2a Série")));
     }};
 
     public Class getNewClass() {
@@ -35,19 +32,19 @@ public class TeacherClassController {
         this.newClass = newClass;
     }
 
-    public List<Class> getTeacherClasses() {
+    public List<Classes> getTeacherClasses() {
         return teacherClasses;
     }
 
-    public void setTeacherClasses(List<Class> teacherClasses) {
+    public void setTeacherClasses(List<Classes> teacherClasses) {
         this.teacherClasses = teacherClasses;
     }
 
-    public List<Class> getClasses() {
+    public List<Classes> getClasses() {
         return classes;
     }
 
-    public void setClasses(List<Class> classes) {
+    public void setClasses(List<Classes> classes) {
         this.classes = classes;
     }
     

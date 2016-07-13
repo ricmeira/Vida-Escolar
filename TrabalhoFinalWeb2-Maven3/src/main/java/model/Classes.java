@@ -31,6 +31,11 @@ public class Classes {
     @ManyToMany(mappedBy="classes")
     private Set<Teachers> teachers = new HashSet<Teachers>();
 
+    public Classes(String class_nm_name, ClassGrades grade) {
+        this.class_nm_name = class_nm_name;
+        this.grade = grade;
+    }
+    
     public Set<Teachers> getTeachers() {
         return teachers;
     }

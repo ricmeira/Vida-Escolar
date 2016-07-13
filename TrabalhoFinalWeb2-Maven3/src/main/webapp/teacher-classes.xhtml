@@ -74,7 +74,7 @@
           <ul class="collection">
               <ui:repeat value="#{teacherClassController.teacherClasses}" var="class">
                 <li class="collection-item">
-                  #{class.name} - #{class.grade}
+                  #{class.class_nm_name} - #{class.grade.clgr_nm_name}
                   <div class="secondary-content">
                     <a class="modal-trigger" href="#modal-remove-class" title="desassociar"><i class="material-icons">close</i></a>
                   </div>
@@ -103,7 +103,7 @@
                         value="#{teacherClassController.newClass}">
                 <!--<f:selectItem id="item1" itemLabel="Turma1" itemValue="1" />-->
                 <f:selectItems value="#{teacherClassController.classes}" var="class"
-                       itemLabel="#{class.name} - #{class.grade}" itemValue="#{class}"/>
+                       itemLabel="#{class.class_nm_name} - #{class.grade.clgr_nm_name}" itemValue="#{class}"/>
             </h:selectOneMenu>
           </div>
         </div>

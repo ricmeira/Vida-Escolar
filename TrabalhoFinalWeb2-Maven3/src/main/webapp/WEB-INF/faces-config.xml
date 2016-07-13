@@ -6,7 +6,7 @@
 
     <managed-bean>
         <managed-bean-name>teacherClassController</managed-bean-name>
-        <managed-bean-class>smd.jsf.TeacherClassController</managed-bean-class>
+        <managed-bean-class>controllers.TeacherClassController</managed-bean-class>
         <managed-bean-scope>session</managed-bean-scope>
     </managed-bean>
     
