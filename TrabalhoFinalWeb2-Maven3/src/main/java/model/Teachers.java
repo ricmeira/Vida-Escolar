@@ -7,38 +7,29 @@ package model;
 
 import java.util.HashSet;
 import java.util.Set;
-import javax.persistence.CascadeType;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToOne;
 
 /**
  *
  * @author fzschornack
  */
-@Entity
 public class Teachers {
-    @Id
-    @GeneratedValue
+    
     private int teacher_sq_id;
     private String teacher_cd_email;
     private String teacher_nm_name;
     private String teacher_cd_password;
     private String teacher_cd_cpf;
-    @OneToOne
     private Subjects subject;
-    @OneToOne
     private Schools school;
-    @ManyToMany(cascade = {CascadeType.ALL})
-    @JoinTable(name="teacher_class", 
-                            joinColumns={@JoinColumn(name="teacher_sq_id")}, 
-                            inverseJoinColumns={@JoinColumn(name="class_sq_id")})
     private Set<Classes> classes = new HashSet<Classes>();
 
+    public Teachers() {
+    }
+
+    public Teachers(String teacher_nm_name) {
+        this.teacher_nm_name = teacher_nm_name;
+    }
+    
     public int getTeacher_sq_id() {
         return teacher_sq_id;
     }

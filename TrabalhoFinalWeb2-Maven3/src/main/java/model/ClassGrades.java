@@ -21,6 +21,9 @@ public class ClassGrades {
     private int clgr_sq_id;
     private String clgr_nm_name;
 
+    public ClassGrades() {
+    }
+    
     public ClassGrades(String clgr_nm_name) {
         this.clgr_nm_name = clgr_nm_name;
     }

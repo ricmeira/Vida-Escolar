@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Vida Escolar - Professor</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+  <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+<body>
+
+  <header>
+    <nav>
+		  <div class="nav-wrapper teal">
+		    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+		    <a href="#" class="brand-logo center">Vida Escolar</a>
+		  </div>
+    </nav>
+    <ul id="mobile-demo" class="side-nav fixed teal">
+      <div class="card">
+        <div class="card-content center">
+          <span class="card-title">Girafales</span>
+          <p>Professor</p>
+        </div>
+      </div>
+      <li>
+      	<ul class="collapsible" data-collapsible="accordion">
+      		<li>
+      			<div class="collapsible-header active">
+      				<span class="white-text">Mensagens</span>
+      			</div>
+      			<div class="collapsible-body">
+		    			<ul class="collection">
+		    				<li class="collection-item"><a href="#">Enviar Mensagem</a></li>
+		    				<li class="collection-item active orange accent-2"><a href="#">Mensagens Enviadas</a></li>
+		    			</ul>
+      			</div>
+    			</li>
+      	</ul>
+      </li>
+      <li><a href="#" class="white-text">Gerenciar Turmas</a></li>
+      <li><a href="#" class="white-text">Dados Pessoais</a></li>
+      <li><a href="#" class="white-text">Sair</a></li>
+    </ul>
+  </header>
+
+  <main>
+    <div class="container">
+      <h3 class="light">Mensagens Enviadas</h3>
+      <div class="row">
+
+        <!-- SEARCH -->
+        <div class="input-field col s12">
+          <input id="search" placeholder="Pesquisar: digite o nome do aluno" autofocus="true" type="text"/>
+          <i class="prefix material-icons">search</i>
+        </div>
+
+        <!-- MESSAGES LIST -->
+        <div class="col s12">
+          <ul class="collapsible" data-collapsible="accordion">
+              <ui:repeat value="#{teacherMessagesController.teacherStudentMessages}" var="teacherStudentMessage">
+                <li>
+                  <div class="collapsible-header">
+                    <div class="row">
+                    <div class="col s3">
+                            <b>#{teacherStudentMessage.student.stud_nm_name}</b>
+                    </div>
+                    <div class="col s6">
+                            <span class="light">#{teacherStudentMessage.getMessageHint()}</span>
+                            </div>
+                    <div class="col s3">	
+                            <span class="right">#{teacherStudentMessage.date}</span>
+                            </div>
+                            </div>
+                    </div>
+                  <div class="collapsible-body">
+                    <p class="light">#{teacherStudentMessage.message}</p>
+                  </div>
+                </li>
+              </ui:repeat>
+          </ul>
+        </div>
+        <!-- END STUDENTS LIST -->
+
+      </div>
+    </div>
+  </main>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/bin/materialize.js"></script>
+  <script type="text/javascript">
+    $( document ).ready(function(){
+      $(".button-collapse").sideNav();
+
+      // the "href" attribute of .modal-trigger must specify the modal ID that wants to be triggered
+      $('.modal-trigger').leanModal({
+        dismissible: false
+      });
+
+    });
+  </script>
+
+
+  </body>
+</html>

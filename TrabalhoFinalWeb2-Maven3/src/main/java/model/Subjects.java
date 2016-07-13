@@ -21,6 +21,13 @@ public class Subjects {
     private int subject_sq_id;
     private String subject_nm_name;
 
+    public Subjects() {
+    }
+
+    public Subjects(String subject_nm_name) {
+        this.subject_nm_name = subject_nm_name;
+    }
+
     public int getSubject_sq_id() {
         return subject_sq_id;
     }

@@ -22,6 +22,13 @@ public class Schools {
     int school_sq_id;
     String school_nm_name;
 
+    public Schools() {
+    }
+    
+    public Schools(String school_nm_name) {
+        this.school_nm_name = school_nm_name;
+    }
+
     public int getSchool_sq_id() {
         return school_sq_id;
     }

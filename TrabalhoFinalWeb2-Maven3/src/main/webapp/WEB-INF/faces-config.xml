@@ -10,4 +10,22 @@
         <managed-bean-scope>session</managed-bean-scope>
     </managed-bean>
     
+    <managed-bean>
+        <managed-bean-name>teacherRegistrationController</managed-bean-name>
+        <managed-bean-class>controllers.TeacherRegistrationController</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+    </managed-bean>
+    
+    <managed-bean>
+        <managed-bean-name>teacherMessagesController</managed-bean-name>
+        <managed-bean-class>controllers.TeacherMessagesController</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    
+    <managed-bean>
+        <managed-bean-name>teacherSendMessageController</managed-bean-name>
+        <managed-bean-class>controllers.TeacherSendMessageController</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
+    
 </faces-config>

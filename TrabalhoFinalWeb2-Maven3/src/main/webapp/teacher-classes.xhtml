@@ -101,7 +101,6 @@
             <label>Turma</label>
             <h:selectOneMenu id="class" class="browser-default"
                         value="#{teacherClassController.newClass}">
-                <!--<f:selectItem id="item1" itemLabel="Turma1" itemValue="1" />-->
                 <f:selectItems value="#{teacherClassController.classes}" var="class"
                        itemLabel="#{class.class_nm_name} - #{class.grade.clgr_nm_name}" itemValue="#{class}"/>
             </h:selectOneMenu>

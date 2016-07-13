@@ -41,8 +41,8 @@
     <br><br>
     
     <div class="col s12 center">
-        <s:url action="toRegisterSupervisor" var="urlTag"></s:url>>
-        <a href="<s:property value="#urlTag" />" class="white-text" >Cadaste-se</a>
+        <s:url action="toRegisterSupervisor" var="urlTag"></s:url>
+        <a href="<s:property value="#urlTag" />" class="white-text" >Cadastre-se</a>
     </div>
 
   </div>
