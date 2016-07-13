@@ -29,7 +29,9 @@ public class ApplicationConfig extends Application {
      * If required, comment out calling this method in getClasses().
      */
     private void addRestResourceClasses(Set<Class<?>> resources) {
+        resources.add(com.rickzcho.trabalhofinalweb2.rest.ClassGradesREST.class);
         resources.add(com.rickzcho.trabalhofinalweb2.rest.SchoolsREST.class);
+        resources.add(com.rickzcho.trabalhofinalweb2.rest.SubjectREST.class);
         resources.add(com.rickzcho.trabalhofinalweb2.rest.SupervisorsREST.class);
     }
     
