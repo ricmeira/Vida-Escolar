@@ -12,6 +12,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -36,9 +37,11 @@ public class HTTPPost {
         }
     }   
     
-    public HTTPPost(String modelName,String method,String value){
-        String URL  = "http://localhost:8080/TrabalhoFinalWeb2-REST/webresources/"+modelName+"/"+method+"/"+value;
-        
+    public HTTPPost(String modelName,String method,List<String> values){
+        String URL  = "http://localhost:8080/TrabalhoFinalWeb2-REST/webresources/"+modelName+"/"+method;
+        for(int i=0;i<values.size();i++){
+            URL = URL.concat("/"+values.get(i));
+        }
         try {
             connectURL = new URL(URL);
         } catch (MalformedURLException ex) {

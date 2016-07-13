@@ -21,6 +21,10 @@
         <action name="RegisterSupervisor" class="actions.LoginSupervisorAction" method="register">
             <result name="success">/supervisor-login.jsp</result> 
         </action>
+        <action name="loginSupervisor" class="actions.LoginSupervisorAction" method="login">
+            <result name="success">/supervisor-students.jsp</result> 
+            <result name="error">/supervisor-login.jsp</result> 
+        </action>
     </package>
 
 </struts>

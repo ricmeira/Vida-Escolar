@@ -11,9 +11,13 @@ import com.google.gson.reflect.TypeToken;
 import static com.opensymphony.xwork2.Action.SUCCESS;
 import com.opensymphony.xwork2.ActionSupport;
 import java.lang.reflect.Type;
+import java.util.ArrayList;
 import java.util.List;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import model.Schools;
 import model.Supervisors;
+import org.apache.struts2.ServletActionContext;
 
 /**
  *
@@ -41,6 +45,32 @@ public class LoginSupervisorAction extends ActionSupport{
         return SUCCESS; 
     } 
 
+    public String login(){
+        List<String> params = new ArrayList<String>();
+        params.add(CPF);
+        params.add(Senha);
+        HTTPPost post = new HTTPPost("supervisor","login",params);
+        Supervisors sup = new Supervisors();
+        sup.setSuper_cd_cpf(CPF);        
+        sup.setSuper_cd_password(Senha);
+        
+        String json = new Gson().toJson(sup);
+
+        String response = post.sendGet();
+        if(response.equals("true")){
+            HttpServletRequest request = ServletActionContext.getRequest();
+            
+            HttpSession session = request.getSession();
+            session.setAttribute("cpf", CPF);
+            session.setMaxInactiveInterval(60*10);
+            
+            return SUCCESS; 
+        }
+        else{            
+            return ERROR;       
+        }
+    }
+    
     public String getSchoolChoosen() {
         return schoolChoosen;
     }

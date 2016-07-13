@@ -5,8 +5,10 @@
  */
 package DAO;
 
+import java.util.List;
 import model.Schools;
 import model.Supervisors;
+import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -28,5 +30,26 @@ public class SupervisorDAO {
 
         session.close();
 
-    }  
+    } 
+    
+    public boolean login(String cpf, String password){
+        Session session = s.getSession();
+
+        Query query = session.createQuery("from Supervisors where super_cd_cpf = :id and super_cd_password = :pass");
+        query.setParameter("id", cpf);
+        query.setParameter("pass", password);
+                
+        List<?> list = query.list();
+        
+        session.close();
+        if(list.size() > 0){
+            System.out.println("Found Super");
+            Supervisors user =(Supervisors)list.get(0);
+            return true;
+        }
+        else{
+            System.out.println("Not Found Super");
+            return false;
+        }
+    }
 }
