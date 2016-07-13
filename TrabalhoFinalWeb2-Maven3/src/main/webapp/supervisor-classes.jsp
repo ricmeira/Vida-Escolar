@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <html lang="pt">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -21,7 +22,7 @@
     <ul id="mobile-demo" class="side-nav fixed teal">
       <div class="card">
         <div class="card-content center">
-          <span class="card-title">Fulano</span>
+            <span class="card-title"><s:param name="CPF"/></span>
           <p>Coordenador</p>
         </div>
       </div>
