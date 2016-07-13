@@ -62,6 +62,7 @@ public class LoginSupervisorAction extends ActionSupport{
             
             HttpSession session = request.getSession();
             session.setAttribute("cpf", CPF);
+            session.setAttribute("type","supervisor");
             session.setMaxInactiveInterval(60*10);
             
             return SUCCESS; 
@@ -69,6 +70,16 @@ public class LoginSupervisorAction extends ActionSupport{
         else{            
             return ERROR;       
         }
+    }
+    
+    public String logout(){
+  
+        HttpServletRequest request = ServletActionContext.getRequest();
+            
+        HttpSession session = request.getSession();
+        session.invalidate();
+            
+        return SUCCESS; 
     }
     
     public String getSchoolChoosen() {

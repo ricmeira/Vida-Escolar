@@ -18,12 +18,21 @@
         <action name="toRegisterSupervisor" class="actions.ToRegisterSupervisorAction" method="execute">
             <result name="success">/supervisor-registration.jsp</result> 
         </action>
+        <action name="toClassesSupervisor" class="actions.toClassesSupervisorAction" method="execute">
+            <result name="success">/supervisor-classes.jsp</result> 
+        </action>
         <action name="RegisterSupervisor" class="actions.LoginSupervisorAction" method="register">
             <result name="success">/supervisor-login.jsp</result> 
         </action>
         <action name="loginSupervisor" class="actions.LoginSupervisorAction" method="login">
             <result name="success">/supervisor-students.jsp</result> 
             <result name="error">/supervisor-login.jsp</result> 
+        </action>
+        <action name="logoutSupervisor" class="actions.LoginSupervisorAction" method="logout">
+            <result name="success">/supervisor-login.jsp</result> 
+        </action>
+        <action name="addClass" class="actions.LoginSupervisorAction" method="logout">
+            <result name="success">/supervisor-login.jsp</result> 
         </action>
     </package>
 

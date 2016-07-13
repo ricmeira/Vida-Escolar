@@ -22,14 +22,17 @@
     <ul id="mobile-demo" class="side-nav fixed teal">
       <div class="card">
         <div class="card-content center">
-            <span class="card-title"><s:param name="CPF"/></span>
+            <span class="card-title">Temp</span>
           <p>Coordenador</p>
         </div>
       </div>
-      <li><a href="#" class="white-text">Alunos</a></li>
+      <li><a href="supervisor-students.jsp" class="white-text">Alunos</a></li>
       <li class="active orange accent-2"><a href="#" class="white-text">Turmas</a></li>
       <li><a href="#" class="white-text">Dados Pessoais</a></li>
-      <li><a href="#" class="white-text">Sair</a></li>
+      <li>
+          <s:url action="logoutSupervisor" var="urlSairTag"></s:url>
+          <a href="<s:property value="#urlSairTag" />" class="white-text" >Sair</a>
+      </li>
     </ul>
   </header>
 
@@ -63,22 +66,6 @@
                 <a class="modal-trigger" href="#modal-remove-class" title="excluir"><i class="material-icons">close</i></a>
               </div>
             </li>
-            <li class="collection-item">
-              Turma 2
-              <div class="secondary-content">
-                <a href="#!" title="editar"><i class="material-icons">edit</i></a>
-                &nbsp;&nbsp;
-                <a href="#!" title="excluir"><i class="material-icons">close</i></a>
-              </div>
-            </li>
-            <li class="collection-item">
-              Turma 3
-              <div class="secondary-content">
-                <a href="#!" title="editar"><i class="material-icons">edit</i></a>
-                &nbsp;&nbsp;
-                <a href="#!" title="excluir"><i class="material-icons">close</i></a>
-              </div>
-            </li>
           </ul>
         </div>
         <!-- END CLASSES LIST -->
@@ -94,19 +81,26 @@
     <div class="modal-content">
       <a href="#!" class="modal-action modal-close black-text right" title="fechar"><i class="material-icons">close</i></a>
       <h4 class="light">Cadastrar nova Turma</h4>
-      <form>
-        <div class="row">
-          <div class="input-field col s12">
-            <input id="class-name" type="text" required />
-            <label for="class-name">Nome</label>
-          </div>
-          <div class="col s12">
-            <label>Série</label>
-            <select id="class-grade" class="browser-default" required>
-              <option value="" disabled selected>Escolha uma opção</option>
-            </select>
-          </div>
-        </div>
+        <s:form name="add" action="addClass">
+            <div class="row">
+                <div class="input-field col s12">
+                    <s:textfield name="name" placeholder="Nome"></s:textfield>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12">
+                    <s:select class="browser-default"   
+                                  label="Série" 
+                                  headerKey="0" 
+                                  list="sub"                
+                                  listKey="clgr_sq_id"
+                                  listValue="clgr_nm_name"
+                                  theme="xhtml"
+                                  name="classGradeChoosen" 
+                                  value="scho"/>
+                </div>
+            </div>
+        </s:form>          
         <div class="row">
           <div class="col s12">
             <button type="submit" class="modal-action modal-close waves-effect waves-light btn right">Cadastrar</button>

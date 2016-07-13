@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <html lang="pt">
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
@@ -26,9 +27,16 @@
         </div>
       </div>
       <li class="active orange accent-2"><a href="#" class="white-text">Alunos</a></li>
-      <li><a href="#" class="white-text">Turmas</a></li>
+      <li>
+        <s:url action="toClassesSupervisor" var="urlTag"></s:url>
+        <a href="<s:property value="#urlTag" />" class="white-text" >Turmas</a>
+      </li>
       <li><a href="#" class="white-text">Dados Pessoais</a></li>
-      <li><a href="#" class="white-text">Sair</a></li>
+      <li>
+          <s:url action="logoutSupervisor" var="urlSairTag"></s:url>
+          <a href="<s:property value="#urlSairTag" />" class="white-text" >Sair</a>
+      </li>
+
     </ul>
   </header>
 
